@@ -26,4 +26,12 @@ const create = async (req, res) => {
         }
     });
 };
-module.exports = {create};
+
+const findAll = async (req, res) =>{
+
+    //parei nesse ponto
+
+
+}
+
+module.exports = {create, findAll};
