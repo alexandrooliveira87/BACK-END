@@ -2,8 +2,10 @@ const userService = require ('../services/user.services');
 const mongoose = require("mongoose");
 
 
+
 const create = async (req, res) => {
-    
+        try {
+
     const {name, username, email, password, avatar, background } = req.body;
 
     if(!name || !username || !email || !password || !avatar || !background ){
@@ -27,10 +29,16 @@ const create = async (req, res) => {
             background
         }
     });
+
+} catch(err)
+{
+    res.status(500).send({message:err.message});
 };
+    };
+
 
 const findAll = async (req, res) =>{
-
+    try{
     const users = await userService.findAllService();
 
     if(users.length === 0){
@@ -38,19 +46,24 @@ const findAll = async (req, res) =>{
     }
 
     res.send(users);
-
+    }catch(err){
+        res.status(500).send({message:err.message});
+    };
 
 };
 
 const findById = async(req, res) => {
-
+    try{
     const user = req.user;
 
     res.send(user);
-
+    }catch(err){
+        res.status(500).send({message:err.message});
+    }
 };
 
 const update = async (req, res)=>{
+    try{
 
     const {name, username, email, password, avatar, background } = req.body;
 
@@ -72,7 +85,9 @@ const update = async (req, res)=>{
     );
 
     res.send({message:"Usuário foi atualizado com sucesso!"});
-
+    }catch(err){
+        res.status(500).send({message:err.message});
+    }
 };
 
 module.exports = {create, findAll, findById, update};
