@@ -69,8 +69,9 @@ const update = async (req, res)=>{
     }
 
     const id = req.params.id;
+
     if(!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(400).send({massage: "usuário Inválido."});
+        return res.status(400).send({massage: "Usuário Inválido."});
     }
 
     const user = await userService.findByIdService(id);
@@ -79,20 +80,19 @@ const update = async (req, res)=>{
         return res.status(400).send({massage: "Usuário não encontrado."});
     }
 
+
+
     await userService.updateService(
         id,
         name, 
         username,
-         email, 
-         password, 
-         avatar,
-          background
+        email, 
+        password, 
+        avatar,
+        background
     );
 
     res.send({message:"Usuário foi atualizado com sucesso!"});
-
-
-
 
 };
 

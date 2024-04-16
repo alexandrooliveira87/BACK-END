@@ -7,11 +7,14 @@ const updateService = (
     id,
     name, 
     username,
-     email, 
-     password, 
-     avatar,
-      background
-) => User.findOneAndUpdate({_id: id},{ name, username, email, password,  avatar,background});
+    email, 
+    password, 
+    avatar,
+    background
+) => User.findOneAndUpdate(
+    {_id: id},
+    { name, username, email, password, avatar,background}
+);
 
 
 module.exports={
