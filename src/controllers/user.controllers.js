@@ -42,18 +42,9 @@ const findAll = async (req, res) =>{
 
 };
 
-const findById = async (req, res) => {
-    const id = req.params.id;
-    
-    if(!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(400).send({massage: "usuário Inválido."});
-    }
+const findById = async(req, res) => {
 
-    const user = await userService.findByIdService(id);
-
-    if(!user){
-        return res.status(400).send({massage: "Usuário não encontrado."});
-    }
+    const user = req.user;
 
     res.send(user);
 
@@ -68,19 +59,7 @@ const update = async (req, res)=>{
         res.status(400).send({mensage:"Submeta pelo menos um campo para fazer a atualização."});
     }
 
-    const id = req.params.id;
-
-    if(!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(400).send({massage: "Usuário Inválido."});
-    }
-
-    const user = await userService.findByIdService(id);
-
-    if(!user){
-        return res.status(400).send({massage: "Usuário não encontrado."});
-    }
-
-
+    const {id, user} = req;
 
     await userService.updateService(
         id,
