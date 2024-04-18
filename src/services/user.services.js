@@ -1,4 +1,6 @@
-const User = require("../models/User");
+import User from "../models/User.js";
+
+
 
 const createService = (body) => User.create(body);
 const findAllService =() => User.find();
@@ -17,9 +19,7 @@ const updateService = (
 );
 
 
-module.exports={
-    createService,
-    findAllService,
-    findByIdService,
-    updateService
-};
+export default {createService,findAllService,findByIdService,updateService};
+
+
+

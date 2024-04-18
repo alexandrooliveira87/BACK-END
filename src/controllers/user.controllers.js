@@ -1,5 +1,5 @@
-const userService = require ('../services/user.services');
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+import userService from '../services/user.services.js';
 
 
 
@@ -63,6 +63,7 @@ const findById = async(req, res) => {
 };
 
 const update = async (req, res)=>{
+   
     try{
 
     const {name, username, email, password, avatar, background } = req.body;
@@ -90,4 +91,4 @@ const update = async (req, res)=>{
     }
 };
 
-module.exports = {create, findAll, findById, update};
+export default {create, findAll, findById, update};
