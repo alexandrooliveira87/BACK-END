@@ -34,10 +34,10 @@ const create = async (req, res) => {
 {
     res.status(500).send({message:err.message});
 };
-    };
+};
 
 
-const findAll = async (req, res) =>{
+const findAll = async (req, res) => {  
     try{
     const users = await userService.findAllService();
 
@@ -62,7 +62,7 @@ const findById = async(req, res) => {
     }
 };
 
-const update = async (req, res)=>{
+const update = async (req, res)=>   {
    
     try{
 
