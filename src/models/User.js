@@ -26,6 +26,7 @@ const UserSchema = new mongoose.Schema(
             type:String,
             required:true,
         },
+
         background:{
             type:String,
             required:true,
@@ -40,6 +41,6 @@ UserSchema.pre("save", async function(next) {
 );
 
 
-const User = mongoose.model("User", UserSchema);
+const User = mongoose.model( "User", UserSchema );
 
 export default User;
