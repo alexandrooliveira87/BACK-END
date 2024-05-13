@@ -22,11 +22,12 @@ const create = async (req, res) => {
         massage: "Usuário criado com sucesso",
         user:{
             id: user._id,
-            name,
-            username,
+            name, 
+            username, 
             email,
             avatar,
             background
+            
         }
     });
 
