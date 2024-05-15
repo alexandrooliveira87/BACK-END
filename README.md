@@ -16,6 +16,6 @@ Estrutura do Projeto
 /dotnet-src: Contém o código-fonte da aplicação .NET.
 
 /Controllers: Controladores da aplicação .NET.
-/Models: Definição dos modelos de dados.
+/Models: Definição dos modelos de dados
 /Services: Serviços da aplicação.
 
