@@ -15,6 +15,7 @@ const create = async (req, res) => {
     const user = await userService.createService(req.body);
 
     if(!user){
+        
         return res.status(400).send({message:"Error na criação"});
     }
 
