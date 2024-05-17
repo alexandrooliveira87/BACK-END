@@ -20,6 +20,7 @@ const create = async (req, res) => {
     }
 
     res.status(201).send({
+    
         massage: "Usuário criado com sucesso",
         user:{
             id: user._id,
