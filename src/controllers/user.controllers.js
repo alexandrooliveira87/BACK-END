@@ -20,7 +20,7 @@ const create = async (req, res) => {
     }
 
     res.status(201).send({
-    
+
         massage: "Usuário criado com sucesso",
         user:{
             id: user._id,
@@ -36,6 +36,7 @@ const create = async (req, res) => {
 } catch(err)
 {
     res.status(500).send({message:err.message});
+    
 };
 };
 
